@@ -16,6 +16,7 @@
     }
   },
   "theme": "prism",
+  "background": "grid",
   "topbarLinks": [
     {
       "name": "Support",
