@@ -19,6 +19,9 @@
   "background": {
     "style": "gradient"
   },
+  "topbar": {
+    "style": "gradient"
+  },
   "topbarLinks": [
     {
       "name": "Support",
