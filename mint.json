@@ -74,7 +74,7 @@
       ]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "API Playground",
       "pages": [
         "wallet-api/endpoint/get",
         "wallet-api/endpoint/create",
