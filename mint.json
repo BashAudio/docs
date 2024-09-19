@@ -30,12 +30,6 @@
   "search": {
     "location": "side"
   },
-  "tabs": [
-    {
-      "name": "API Playground",
-      "url": "api-playground"
-    }
-  ],
   "anchors": [
     {
       "name": "Documentation",
@@ -82,9 +76,9 @@
     {
       "group": "Endpoint Examples",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "api-playground/endpoint/get",
+        "api-playground/endpoint/create",
+        "api-playground/endpoint/delete"
       ]
     }
   ],
