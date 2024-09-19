@@ -19,16 +19,16 @@
   "background": {
     "style": "gradient"
   },
-  "topbarLinks": [
-    {
-      "name": "Support",
-      "url": "mailto:hi@mintlify.com"
-    }
-  ],
-  "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
-  },
+  // "topbarLinks": [
+  //   {
+  //     "name": "Support",
+  //     "url": "mailto:hi@mintlify.com"
+  //   }
+  // ],
+  // "topbarCtaButton": {
+  //   "name": "Dashboard",
+  //   "url": "https://dashboard.mintlify.com"
+  // },
   "modeToggle": {
     "default": "dark",
     "isHidden": true
