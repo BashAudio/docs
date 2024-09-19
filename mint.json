@@ -70,15 +70,15 @@
     {
       "group": "API Documentation",
       "pages": [
-        "api-reference/introduction"
+        "wallet-api/introduction"
       ]
     },
     {
       "group": "Endpoint Examples",
       "pages": [
-        "api-playground/endpoint/get",
-        "api-playground/endpoint/create",
-        "api-playground/endpoint/delete"
+        "wallet-api/endpoint/get",
+        "wallet-api/endpoint/create",
+        "wallet-api/endpoint/delete"
       ]
     }
   ],
