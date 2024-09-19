@@ -15,7 +15,7 @@
       "to": "#07C983"
     }
   },
-  "layout": "solidSidenav",
+  "layout": "sidenav",
   "topbarLinks": [
     {
       "name": "Support",
