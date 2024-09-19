@@ -76,15 +76,15 @@
     {
       "group": "API Documentation",
       "pages": [
-        "api-playground/introduction"
+        "api-reference/introduction"
       ]
     },
     {
       "group": "Endpoint Examples",
       "pages": [
-        "api-playground/endpoint/get",
-        "api-playground/endpoint/create",
-        "api-playground/endpoint/delete"
+        "api-reference/endpoint/get",
+        "api-reference/endpoint/create",
+        "api-reference/endpoint/delete"
       ]
     }
   ],
