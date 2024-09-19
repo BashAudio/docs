@@ -32,8 +32,8 @@
   },
   "tabs": [
     {
-      "name": "API Reference",
-      "url": "api-reference"
+      "name": "API Playground",
+      "url": "api-plaground"
     }
   ],
   "anchors": [
@@ -76,15 +76,15 @@
     {
       "group": "API Documentation",
       "pages": [
-        "api-reference/introduction"
+        "api-plaground/introduction"
       ]
     },
     {
       "group": "Endpoint Examples",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "api-plaground/endpoint/get",
+        "api-plaground/endpoint/create",
+        "api-plaground/endpoint/delete"
       ]
     }
   ],
