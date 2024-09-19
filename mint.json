@@ -34,7 +34,7 @@
     "isHidden": true
   },
   "sidebar": {
-    "items": "card"
+    "items": "container"
   },
   "tabs": [
     {
