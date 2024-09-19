@@ -16,7 +16,7 @@
     }
   },
   "theme": "prism",
-  "background": "grid",
+  "background": "gradient",
   "topbarLinks": [
     {
       "name": "Support",
