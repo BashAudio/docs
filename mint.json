@@ -32,8 +32,8 @@
   },
   "tabs": [
     {
-      "name": "API Reference",
-      "url": "api-reference"
+      "name": "API Playground",
+      "url": "api-playground"
     }
   ],
   "anchors": [
