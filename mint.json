@@ -36,7 +36,7 @@
   "sidebar": {
     "items": "container"
   },
-  "search": "side",
+  "search": "top",
   "tabs": [
     {
       "name": "API Reference",
