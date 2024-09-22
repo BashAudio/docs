@@ -7,12 +7,16 @@
   },
   "favicon": "/favicon.svg",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
+    "primary": "#B7B1FB",
+    "light": "#B7B1FB",
+    "dark": "#080408",
     "anchors": {
       "from": "#0D9373",
       "to": "#07C983"
+    },
+    "background": {
+      "light": "#080408",
+      "dark": "#080408"
     }
   },
   "layout": "sidenav",
@@ -28,25 +32,14 @@
     "items": "container"
   },
   "search": {
-    "location": "side"
+    "location": "top"
   },
-  "anchors": [
-    {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
-    }
-  ],
+    "topbarCtaButton": {
+    "name": "Get Started",
+    "url": "https://mintlify.com/start",
+    "style": "roundedRectangle",
+    "arrow": false
+  },
   "navigation": [
     {
       "group": "Get Started",
@@ -83,8 +76,10 @@
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "website": "https://mufi.app",
+    "twitter": "https://x.com/MusicFinance",
+    "discord": "https://t.me/mufi_wallet",
+    "medium": "https://github.com/mintlify",
+    "linkedin": "https://www.linkedin.com/company/mufi",
   }
 }
