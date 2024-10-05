@@ -42,7 +42,7 @@
   },
   "navigation": [
     {
-      "group": "Mufi",
+      "group": "",
       "pages": [
         "introduction",
         "quickstart"
