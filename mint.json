@@ -7,8 +7,8 @@
   },
   "favicon": "/favicon.svg",
   "colors": {
-    "primary": "#B7B1FB",
-    "light": "#B7B1FB",
+    "primary": "#9ca3ff",
+    "light": "#9ca3ff",
     "dark": "#080408",
     "anchors": {
       "from": "#0D9373",
@@ -34,44 +34,35 @@
   "search": {
     "location": "top"
   },
-    "topbarCtaButton": {
+  "topbarCtaButton": {
     "name": "Get Started",
-    "url": "https://mintlify.com/start",
+    "url": "mailto:connect@mufi.app",
     "style": "roundedRectangle",
-    "arrow": false
+    "arrow": true
   },
   "navigation": [
     {
-      "group": "Get Started",
+      "group": "Mufi",
       "pages": [
         "introduction",
-        "quickstart",
-        "development"
+        "quickstart"
       ]
     },
     {
-      "group": "Essentials",
+      "group": "Wallets API",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
-      ]
-    },
-    {
-      "group": "API Documentation",
-      "pages": [
-        "wallet-api/introduction"
+        "wallet-api/introduction",
+        "wallet-api/authentication",
+        "wallet-api/security"
       ]
     },
     {
       "group": "API Playground",
       "pages": [
-        "wallet-api/endpoint/get",
-        "wallet-api/endpoint/create",
-        "wallet-api/endpoint/delete"
+        "wallet-api/endpoint/auth",
+        "wallet-api/endpoint/refreshAuth",
+        "wallet-api/endpoint/version",
+        "wallet-api/endpoint/wallets"
       ]
     }
   ],
