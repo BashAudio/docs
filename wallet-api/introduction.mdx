@@ -1,26 +1,16 @@
 ---
 title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+description: 'API documentation for the Mufi Wallet API'
 ---
 
-<Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
-</Note>
+The Mufi Wallet API is a RESTful API that allows you to interact with the Mufi Wallet. It enables you to easily create custodial wallets on the Polkadot Network paired with user email addresses.
+These wallets are secure, easy to use, and allow you to interact with web3 applications and services in a web2 flow. 
 
-## Welcome
+Simply follow the below steps to enable your project to support these wallets.
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+## Overview //TODO: Fill this out
 
-<Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
->
-  View the OpenAPI specification file
-</Card>
-
-## Authentication
+### Authentication 
 
 All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
 
@@ -31,3 +21,58 @@ All API endpoints are authenticated using Bearer tokens and picked up from the s
   }
 ]
 ```
+
+### Security 
+
+### Standard Errors
+
+<CodeGroup>
+  ```json 400
+  {
+    "error": "invalid_request",
+    "error_description": "The request is missing a required parameter, includes an unsupported parameter or parameter value, or is otherwise malformed."
+  }
+  ```
+  ```json 401
+  {
+    "error": "unauthorized",
+    "error_description": "The request requires user authentication or the authentication has failed."
+  }
+  ```
+  ```json 403
+  {
+    "error": "forbidden",
+    "error_description": "The server understood the request, but refuses to authorize it."
+  }
+  ```
+  ```json 404
+  {
+    "error": "not_found",
+    "error_description": "The requested resource could not be found."
+  }
+  ```
+  ```json 500
+  {
+    "error": "internal_server_error",
+    "error_description": "The server encountered an internal error and was unable to complete your request."
+  }
+  ```
+</CodeGroup>
+
+## Deep Dive
+<CardGroup cols={2}>
+  <Card
+    title="Authentication"
+    icon="user"
+    href="/wallet-api/authentication"
+  >
+    Learn more about authentication.
+  </Card>
+    <Card
+    title="Security"
+    icon="shield"
+    href="/wallet-api/security"
+  >
+    Learn more about the Mufi Wallet API security features.
+  </Card>
+</CardGroup>
