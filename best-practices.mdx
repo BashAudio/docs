@@ -1,0 +1,33 @@
+---
+title: Best Practices
+description: 'Tips to keep yourself and your users safe'
+---
+
+## Protect Developer Credentials
+- Limit and manage access to your Mufi Dashboard and API tokens.
+- Set up a time-based one-time password (e.g., Google Authenticator) for accessing the your Mufi dashboard and features.
+
+## Secure Storage of Mufi API keys
+- Store Mufi API tokens securely and minimize access to these credentials.
+- They should only be used on the backend and never shared on the client side.
+
+## JWT Length and Storage
+- When the JWT expires a user’s session ends (user is logged out) so they will have to re-authenticate once it expires. The JWT token has a maximum lifetime of 30 days. Configure this to the shortest acceptable time to balance security and user experience.
+- Never save or log user JWTs.
+
+## Mitigate XSS Attacks
+- Use content security policies on the frontend.
+- Implement TLS and HTTPS for all requests.
+- Limit permissible JavaScript, set context headers properly, and avoid open redirects.
+- If you enable the frame-src CSP, then you need to perform this whitelisting (learn how here).
+- Enforce a strict Content Security Policy (CSP). Refer to this guide for more information.
+
+## Enhance CORS Security
+- Add specific origins for CORS to protect your environment from unauthorized websites using your public environment key.
+- Avoid using wildcards in favor of explicit domains.
+- Be especially strict with your live environment (e.g don’t have localhost etc)
+
+## Addressing Potential Risks - internal employee account accessed
+If an employee account is compromised and best practices are not followed, there are several risks:
+
+- Unauthorized activities could be conducted using acquired JWT and session key.

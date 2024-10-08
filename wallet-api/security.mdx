@@ -1,4 +1,61 @@
 ---
 title: 'Security'
-description: 'Wallets security break down so you can understand how Mufi keeps your assets secure'
+description: 'Learn how Mufi keeps your assets secure'
 ---
+
+MuFi aims to serve millions of users by offering a custodial wallet solution that simplifies wallet management for those who are not concerned with decentralization or managing their own wallet secrets. This solution introduces several key security challenges:
+- Secure Secret Generation
+- Secure Secret Storage
+- Secure Signatures
+
+## Polkadot-First Approach with sr25519 Signatures
+
+As a Polkadot-first company, we prioritize sr25519 signatures. While threshold signature generation is still developing for many signature algorithms like ed25519, it is not yet fully established for sr25519. Therefore, we generate secrets using polkadot-js in combination with Shamir's Secret Sharing (SSS).
+
+Polkadot offers proxy accounts and multi-sig features, however both of these require 20+ DOT deposits, and each multi-sig transaction requires an additional 20+ DOT refundable deposit per transaction. These requirements do not scale to millions of users, and many users who only want to redeem a drink coupon will not be willing to deposit 20 DOT for a $5 drink. We may consider using multi-sig and proxy accounts in the future when we support high-value assets where this makes sense.
+
+## Shamir's Secret Sharing (SSS)
+
+SSS allows us to split a secret into n parts, requiring a threshold t/n to reconstruct the secret. This method enhances resilience, ensuring that even if some secret custodians are compromised, t parts are still sufficient to maintain system security and operation.
+
+## Secure Polkadot Wallet Management System
+
+We have implemented a secure system for managing Polkadot wallets, ensuring the highest level of security and integrity for sr25519 signatures. Below is an overview of our architecture and security measures.
+
+## Architecture Overview
+
+### Shamir's Secret Sharing (SSS) Implementation
+
+We use Shamir's Secret Sharing (SSS) to split cryptographic secrets needed for sr25519 signatures into multiple parts, distributing them across isolated services. This ensures no single service holds the complete secret, providing robust protection against potential compromises.
+
+### VPC-Protected Signer Service
+
+Our Signer service, responsible for generating sr25519 signatures and signing, operates within a secure Virtual Private Cloud (VPC), isolated from public access. Only the Gateway API can communicate with it, safeguarding sensitive operations like signing transactions from external threats.
+
+### Gateway API with JWT Authentication
+
+The Gateway API, exposed via a public IP, serves as the entry point for B2B interactions. We have implemented JSON Web Token (JWT) authentication to ensure that only authorized clients can access the Gateway API, adding an additional layer of security against unauthorized access.
+
+### Secure Communication and Access Control
+
+Communication between the Gateway API and the Signer service is secured with strong authentication and encrypted channels. Strict access controls allow the Gateway API the least privilege necessary to interact with the Signer service, minimizing risks even if the Gateway API is exposed.
+
+### Secure Secret Storage in PostgreSQL
+
+For storing millions of secrets, services like KMS are limited by a max of 1 million keys and are very expensive at scale (cost per key). We employ the following approach using PostgreSQL:
+
+- Strong Encryption: Each secret is individually encrypted with a strong algorithm (e.g., AES-256) before storage in PostgreSQL.
+- Key Management: Encryption keys are securely managed through a dedicated KMS, with periodic rotation and secure handling.
+- Database Security: The PostgreSQL database is hardened, with encryption at rest and in transit, strict access controls, and regular security patches.
+- Isolated Services: Each service holding a part of the secret is isolated with strong access controls to mitigate risks.
+
+## Additional Security Measures
+
+- Rate Limiting & IP Whitelisting: Rate limiting is enforced on the Gateway API to prevent abuse, and IP whitelisting restricts access to trusted partners only.
+- Web Application Firewall (WAF): A WAF filters out malicious traffic and protects against common web vulnerabilities.
+- Auditing & Monitoring: All interactions with the Signer service are logged and monitored for suspicious activities, with regular audits to ensure compliance with security best practices.
+
+## Conclusion
+
+By integrating Shamir's Secret Sharing, a VPC-protected Signer service, and a JWT-authenticated Gateway API, alongside secure secret storage in PostgreSQL, we have created a highly secure environment for managing Polkadot wallets and generating sr25519 signatures. This architecture safeguards against unauthorized access and potential compromises, ensuring the integrity and security of the entire signing process.
+
