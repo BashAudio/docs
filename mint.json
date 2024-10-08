@@ -45,15 +45,17 @@
       "group": "",
       "pages": [
         "introduction",
-        "quickstart"
+        "quickstart",
+        "best-practices"
       ]
     },
     {
       "group": "Wallets API",
       "pages": [
         "wallet-api/introduction",
-        "wallet-api/authentication",
-        "wallet-api/security"
+        "wallet-api/security",
+        "wallet-api/custodians",
+        "wallet-api/authentication"
       ]
     },
     {

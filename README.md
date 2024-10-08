@@ -1,12 +1,6 @@
-# Mintlify Starter Kit
+# Mufi Documentation Website
 
-Click on `Use this template` to copy the Mintlify starter kit. The starter kit contains examples including
-
-- Guide pages
-- Navigation
-- Customizations
-- API Reference pages
-- Use of popular components
+Code base for the Mufi documentation site.
 
 ### Development
 
@@ -24,7 +18,7 @@ mintlify dev
 
 ### Publishing Changes
 
-Install our Github App to auto propagate changes from your repo to your deployment. Changes will be deployed to production automatically after pushing to the default branch. Find the link to install on your dashboard. 
+Changes will be deployed to production automatically after pushing to the default branch.
 
 #### Troubleshooting
 

@@ -1,0 +1,21 @@
+---
+title: 'Custodians'
+description: 'Learn how Mufi manages your wallet secrets'
+---
+
+Custodians are multiple API services hosted across different regions to store parts of a wallet secret. The Provisioner uses Shamir's Secret Sharing to split and encrypt parts of a wallet secret and shares different parts with all Custodians, which each re-encrypt those parts with their own encryption keys before storing them. Having Custodians hosted in multiple regions has a few benefits:
+
+- Security through Isolation: By placing each custodian (with its own VPC, database, and encryption key) in different regions, we ensure physical separation. This reduces the risk of a single point of failure and makes it more difficult for an attacker to compromise all custodians at once.
+- Compliance: In some cases, storing sensitive data across multiple regions helps meet geographic and compliance requirements (e.g., GDPR and data sovereignty laws).
+- Resilience: Distributing across regions increases fault tolerance. Even if one region goes down, the rest of the custodians remain accessible and the full wallet secret can be re-created with a minimum threshold of secret parts.
+
+This does come at the cost of latency, but increased security and resilience justifies this cost. Blockchain transactions have an even greater latency due to block times so users should not feel any additional latency when re-creating their secrets to sign a transaction. Transactions should be asynchronous.
+
+## Platform Separation
+Custodians are hosted on a different platform service (AWS) than Provisioner (GCP), the only privileged client of Custodians. This adds a layer of security so that even if the Custodian platform account is compromised the secret parts stored in those databases are still encrypted from a secret in GCP. All parties must cooperate to recover the full wallet secret.
+
+## Double Encryption and Key Rotation
+Custodians receive encrypted parts of a wallet secret. Custodians encrypt that data once more before saving the blob to the database. At no point is the full secret stored in a single location. Custodians also use periodic encryption key rotation.
+
+## Authentication and IP Whitelisting
+Custodians have their own authentication tokens and have a whitelist of allowed callers by checking the IP address. The Provisioner API is the only whitelisted caller. No MuFi member will have access in production.
